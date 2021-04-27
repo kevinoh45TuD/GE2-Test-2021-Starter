@@ -7,6 +7,7 @@ public class dogController : MonoBehaviour
     public GameObject ball;
     public GameObject player;
     public GameObject ballPos;
+    public GameObject cameraP;
 
     public bool hasArrived;
     public bool hasBall;
@@ -16,13 +17,13 @@ public class dogController : MonoBehaviour
     public GameObject tail;
     public bool tailMove;
     public Vector3 rotateVector;
-    
+
     public void Update()
     {
 
         if (tailMove)
         {
-            rotateVector += new Vector3(0f, 10f, 0f);
+            rotateVector += new Vector3(0f, (10f * gameObject.GetComponent<Boid>().velocity.x), 0f);
             tail.transform.rotation = Quaternion.Euler(rotateVector);
         }
         
@@ -51,7 +52,7 @@ public class dogController : MonoBehaviour
                 gameObject.GetComponent<Boid>().velocity = Vector3.zero;
                 
             }
-
+            
         }
         
         if (ball != null)
@@ -81,18 +82,23 @@ public class dogController : MonoBehaviour
             {
                 if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 10f)
                 {
-                    ball.transform.parent = null;
-                    ball = null;
+                    //ball.transform.parent = null;
+                    //ball = null;
                     waitTime = 2f;
                     tailMove = false;
                     tail.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    gameObject.transform.rotation = Quaternion.Inverse(player.transform.rotation);
+                    Destroy(ball);
+                    cameraP.GetComponent<ThrowBall>().canThrow = true;
+                    hasBall = false;
+
                 }
             }
             
             
         }
     }
-
+    
     public void ballPickedUp()
     {
         gameObject.GetComponent<Arrive>().enabled = true;

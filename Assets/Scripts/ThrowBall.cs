@@ -16,23 +16,13 @@ public class ThrowBall : MonoBehaviour
 
     public void Update()
     {
-        if (canThrow == false)
-        {
-            coolDown += Time.deltaTime;
-        }
         
-        if (coolDown >= 5f)
-        {
-            coolDown = 0f;
-            canThrow = true;
-        }
-
         if (Input.GetKeyDown(KeyCode.Space) && canThrow == true)
         {
             bark.Play();
             GameObject Go = Instantiate(ballObj, transform.position, gameObject.transform.rotation);
             Go.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
-            dog.gameObject.GetComponent<dogController>().ball = Go.gameObject;
+            dog.gameObject.GetComponent<dogController>().ball = Go;
             canThrow = false;
         }
     }

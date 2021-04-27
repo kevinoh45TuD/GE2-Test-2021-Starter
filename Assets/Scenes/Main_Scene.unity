@@ -1138,6 +1138,7 @@ MonoBehaviour:
   ball: {fileID: 0}
   player: {fileID: 1062577298}
   ballPos: {fileID: 1296423582}
+  cameraP: {fileID: 963194225}
   hasArrived: 0
   hasBall: 0
   waitTime: 0
