@@ -10,9 +10,17 @@ public class dogController : MonoBehaviour
 
     public bool hasArrived;
     public bool hasBall;
+
+    public float waitTime;
     
     public void Update()
     {
+
+        if (waitTime > 0)
+        {
+            waitTime--;
+        }
+        
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 10)
         {
             hasArrived = true;
@@ -26,7 +34,7 @@ public class dogController : MonoBehaviour
 
         if (ball != null)
         {
-            if (Vector3.Distance(gameObject.transform.position ,ball.transform.position) <= 2)
+            if (Vector3.Distance(gameObject.transform.position ,ball.transform.position) <= 2 && waitTime <= 0)
             {
                 hasBall = true;
                 hasArrived = false;
@@ -36,13 +44,21 @@ public class dogController : MonoBehaviour
                 gameObject.GetComponentInChildren<Arrive>().enabled = true;
                 gameObject.GetComponentInChildren<Seek>().enabled = false;
                 
-                if (hasBall)
-                {
-                    hasArrived = false;
-                    gameObject.GetComponentInChildren<Arrive>().enabled = true;
-                }
-                
             }
+            if (hasBall)
+            {
+                hasArrived = false;
+                gameObject.GetComponentInChildren<Arrive>().enabled = true;
+            }
+            
+            if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 5)
+            {
+                ball.transform.parent = null;
+                gameObject.GetComponentInChildren<Seek>().enabled = false;
+                ball = null;
+                waitTime = 2f;
+            }
+            
         }
     }
 }
