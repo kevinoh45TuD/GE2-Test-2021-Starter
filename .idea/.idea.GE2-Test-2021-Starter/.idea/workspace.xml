@@ -22,9 +22,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/dogCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ThrowBall.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Arrive.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Seek.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ThrowBall.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/dogController.cs" />
       </list>
     </option>
@@ -76,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619517228544</updated>
-      <workItem from="1619517232575" duration="6794000" />
+      <workItem from="1619517232575" duration="9868000" />
     </task>
     <servers />
   </component>

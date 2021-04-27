@@ -12,6 +12,8 @@ public class ThrowBall : MonoBehaviour
 
     public GameObject dog;
 
+    public AudioSource bark;
+
     public void Update()
     {
         if (canThrow == false)
@@ -27,10 +29,9 @@ public class ThrowBall : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canThrow == true)
         {
+            bark.Play();
             GameObject Go = Instantiate(ballObj, transform.position, gameObject.transform.rotation);
             Go.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * throwSpeed, ForceMode.Impulse);
-            dog.gameObject.GetComponentInChildren<Seek>().enabled = true;
-            dog.gameObject.GetComponentInChildren<Seek>().targetGameObject = Go.gameObject;
             dog.gameObject.GetComponent<dogController>().ball = Go.gameObject;
             canThrow = false;
         }
