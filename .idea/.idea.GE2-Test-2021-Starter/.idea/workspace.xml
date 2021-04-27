@@ -13,11 +13,19 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ThrowBall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Arrive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/dogController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Seek.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/dogCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ThrowBall.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Arrive.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Seek.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/dogController.cs" />
       </list>
     </option>
   </component>
@@ -68,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619517228544</updated>
-      <workItem from="1619517232575" duration="1306000" />
+      <workItem from="1619517232575" duration="6256000" />
     </task>
     <servers />
   </component>

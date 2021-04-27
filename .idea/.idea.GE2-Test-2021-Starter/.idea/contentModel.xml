@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="Arrive.cs" t="Include" />
           <e p="Boid.cs" t="Include" />
+          <e p="dogController.cs" t="Include" />
           <e p="EscapeToQuit.cs" t="Include" />
           <e p="FollowPath.cs" t="Include" />
           <e p="FPSController.cs" t="Include" />
